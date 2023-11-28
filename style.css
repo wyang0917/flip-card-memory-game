@@ -1,0 +1,163 @@
+body{
+  margin: 0;
+  color: #fff;
+  font-family:Open Sans,sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+/* h1{
+  font-family: Comfortaa, cursive;
+  letter-spacing: 3px;
+  font-size: 42px;
+  text-align: center;
+} */
+
+h3 {
+  font-size: 28px;
+}
+
+header{
+  background: url(./img/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new-game-button{
+  margin-top: 30%;
+  padding: 12px 15px;
+  border-radius: 5px;
+}
+
+.button-img {
+  width: 180px;
+  height: 80px;
+}
+
+#game-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+#game-container.hidden{
+  display: none;
+}
+
+#game-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background:url(./img/bg.png) no-repeat center/cover;
+}
+
+#game{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  perspective: 800px;
+}
+
+.game-card{
+  width: 164px;
+  height: 244px;
+  margin: 5px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  box-shadow: 0px 2px 4px grey;
+}
+
+.game-card figure{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-card .front{
+  background: url(./img/carton_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.game-card .back{
+  transform: rotateY(180deg);
+}
+
+.game-card .back img{
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width:800px){
+  .game-card{
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.game-card.flipped{
+  transform: rotateY(180deg);
+}
+
+#score-board{
+  margin: 30px 0 5px;
+  display: flex;
+}
+
+.score{
+  padding: 0 20px;
+}
+
+#score-board.hidden{
+  visibility: hidden;
+}
+
+#win-screen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#win-screen.visible{
+  visibility: visible;
+}
+
+#replay-button{
+  cursor: pointer;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 0px 2px 4px white;
+}
+
+#replay-button:hover{
+  background-color: #f8f8ff;
+}
